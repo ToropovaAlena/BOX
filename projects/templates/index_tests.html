@@ -1,0 +1,21 @@
+{% extends "project/index.html" %}
+
+{% block title %}список публикацый{% endblock %}
+{% block content %}
+  <h2>Список публикацый</h2>
+  <table>
+    <tr>
+        <td>Название</td><td>Дата</td>
+    </tr>
+    {% for publication in publications %}
+    <tr>
+        <td><a href="publications/{{publication.id}}">{{publication.name}}</a></td>
+        <td>{{publication.date}}</td>
+    </tr>
+
+    {% endfor %}
+  </table>
+
+
+
+{% endblock %}

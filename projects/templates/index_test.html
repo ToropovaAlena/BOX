@@ -1,0 +1,20 @@
+{% extends "project/index.html" %}
+
+{% block title %}{{ name }}{% endblock %}
+{% block content %}
+<h1>{{name}}</h1>
+<h3>{{ date }}</h3>
+<p>{{ text|safe }}</p>
+<h3>коментарии</h3>
+  {% for i in comments %}
+    <h4>{{i.namecom }}</h4>
+    <h4>{{i.textcom}}</h4>
+  {% endfor %}
+<form class="" action="/comment" method="post">
+{% csrf_token %}
+<textarea name="namecom" rows="1" cols="30" placeholder="имя"></textarea><br>
+<textarea name="textcom" rows="7" cols="40" placeholder="коментарий"></textarea><br>
+<input type="submit" value="Добавить коментарий"><br><br>
+
+</form>
+{% endblock %}

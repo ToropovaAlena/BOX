@@ -1,0 +1,15 @@
+{% extends "project/index.html" %}
+
+{% block title %}Создание публикацыи{% endblock %}
+{% block content %}
+  <h4>Создание публикцыи</h4>
+  <p style="color:red"><h1>{{publications}}</h1></p>
+  <form class="" action="/publish" method="post">
+    {% csrf_token %}
+    <input type="password" name="secret" placeholder="Secret Key"><br><br>
+    <textarea name="name" rows="1" cols="80" placeholder="название"></textarea><br>
+    <textarea name="text" rows="30" cols="80" placeholder="Текст"></textarea><br>
+    <input type="submit" value="Опубликовать!"><br><br>
+
+  </form>
+{% endblock %}
